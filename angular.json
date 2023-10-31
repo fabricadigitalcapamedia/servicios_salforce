@@ -63,7 +63,8 @@
               "browserTarget": "consult_micro:build:production"
             },
             "development": {
-              "browserTarget": "consult_micro:build:development"
+              "browserTarget": "consult_micro:build:development",
+              "proxyConfig": "proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"
