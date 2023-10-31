@@ -50,7 +50,7 @@ export class AppComponent implements AfterViewInit {
   }
 
   realizarAccion(element: any) {
-    this.consulmicroService.getEjec(element).subscribe((response) => {
+    this.consulmicroService.getEjec("curl --location '\http://msautentiltoken-nm-salesforce-sales-qa.apps.r05oof71.eastus2.aroapp.io/MS/MsAuthentication/Authentication' \ --header 'accept: application/json' \ --header 'Content-Type: application/json' \ --header 'Cookie: 170751ca5dbdd2fc7b788ea00752648c=9cd1c813b3531903fbcf1203e950ec9c; 9852ea517a763ff80f67b409a3a05176=8d78291174b3aac66d11a05f44139853' \ --data-raw '{ \"iss\": \"3MVG9qEXqmIutu_TwT3C7e5DLglHfznLNbZQYcQw2mFNAN8PtHZsu1vwcUF.3W_cdUXPULPXAckbagusIKdbw\", \"sub\": \"devops@clarosfi.com.co.ci03\", \"aud\": \"\https://test.salesforce.com\", \"exp\": \"1696455546\" }' ").subscribe((response) => {
       // Implementa la lógica de la acción que deseas realizar con el elemento seleccionado.
       console.log('Haciendo algo con el elemento:', element);
     });
