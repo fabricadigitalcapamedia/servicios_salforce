@@ -64,8 +64,7 @@
             },
             "development": {
               "browserTarget": "consult_micro:build:development",
-              "proxyConfig": "proxy.conf.json",
-              "port": 3000 
+              "proxyConfig": "proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"

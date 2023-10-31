@@ -40,6 +40,7 @@ export class ConsulmicroService {
           curlData.method = "POST";
         }else {
           curlData.method = "GET";
+          
         }
       } 
       if (line.startsWith('--header')) {
@@ -60,19 +61,9 @@ export class ConsulmicroService {
 
     let res = this.sendHttpRequest(curlData);
     console.log(res);
-    return this.http.request("POST", "http://localhost:8387/api/v1/servicedemo", { body: { 
-
-    nameService: "PruebaBasura",
-    json: "{ \"pruebabasura\" : \"dato basura\", \"jsonbasura\" : \"dato basura\" }",
-    fechaCreacion: "2023-10-02T10:30:00",
-    fechaModificacion: "2023-10-02T10:30:00" 
-
-} }).pipe(
+    return this.http.request(curlData.method, curlData.url, { body: curlData.body }).pipe(
       catchError((error: any) => {
-        // Manejar el error aquí, por ejemplo, registrándolo o devolviendo un error personalizado.
         console.error('Error en la solicitud HTTP:', error);
-        
-        // Devuelve un nuevo observable que emite el error
         return (error.status.toString());
       })
     );
@@ -81,18 +72,7 @@ export class ConsulmicroService {
   async sendHttpRequest(curlData: any) {
     //const headers = new HttpHeaders(curlData.headers);
     let responseOp;
-    let data = { 
-
-      iss: "3MVG9qEXqmIutu_TwT3C7e5DLglHfznLNbZQYcQw2mFNAN8PtHZsu1vwcUF.3W_cdUXPULPXAckbagusIKdbw", 
-  
-      sub: "devops@clarosfi.com.co.ci03", 
-  
-      aud: "https://test.salesforce.com", 
-  
-      exp: "1696455546" 
-  
-  };
-    responseOp = axios.post("http://msautentiltoken-nm-salesforce-sales-qa.apps.r05oof71.eastus2.aroapp.io/MS/MsAuthentication/Authentication", data, {responseType: 'json',}).then((response) => {
+    responseOp = axios.post(curlData.url, curlData.data, {responseType: 'json',}).then((response) => {
       console.log(response);
       return response;
     })
