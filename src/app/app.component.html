@@ -1,0 +1,64 @@
+<table mat-table [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)"
+       class="mat-elevation-z8">
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="position">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by number">
+      No.
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="action">
+    <th mat-header-cell *matHeaderCellDef>
+      Acción
+    </th>
+    <td mat-cell *matCellDef="let element">
+      <button mat-button (click)="realizarAccion(element)">Ejecutar {{element.name}}</button>
+    </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by name">
+      Name
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="request">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by weight">
+      Request
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.request}} </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="response">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by symbol">
+      Response
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.response}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="horainicial">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by symbol">
+      Hora Inicial
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.horainicial}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="horafinal">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by symbol">
+      Hora Final
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.horafinal}} </td>
+  </ng-container>  
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+
+<router-outlet></router-outlet>
