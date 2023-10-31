@@ -11,11 +11,10 @@ export interface PeriodicElement {
   position: number;
   request: string;
   response: string;
-  horainicial: string;
-  horafinal: string;
 }
 const ELEMENT_DATA: PeriodicElement[] = [
-  { position: 1, name: 'Mspruba1', request: 'localhost:8080', response: 'reponse', horainicial: '', horafinal: '' },
+  { position: 1, name: 'Mspruba1', request: 'localhost:8080', response: 'reponse'},
+  { position: 2, name: 'Mspruba2', request: 'localhost:8081', response: 'reponse'},
 ];
 
 @Component({
@@ -24,16 +23,20 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements AfterViewInit {
-  displayedColumns: string[] = ['position', 'action', 'name', 'request', 'response', 'horainicial', 'horafinal'];
+  displayedColumns: string[] = ['position', 'action', 'name', 'request', 'response'];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
+  buttonClasses: string = '';
+  boxControl: any;
 
   constructor(private _liveAnnouncer: LiveAnnouncer, private consulmicroService: ConsulmicroService) { }
 
   @ViewChild(MatSort)
   sort!: MatSort;
 
+
   ngAfterViewInit() {
     this.dataSource.sort = this.sort;
+    this.boxControl = ELEMENT_DATA;
   }
 
   /** Announce the change in sort state for assistive technology. */
@@ -50,6 +53,7 @@ export class AppComponent implements AfterViewInit {
   }
 
   realizarAccion(element: any) {
+    console.log(element)
     this.consulmicroService.getEjec(element).subscribe((response) => {
       // Implementa la lógica de la acción que deseas realizar con el elemento seleccionado.
       console.log('Haciendo algo con el elemento:', element);
