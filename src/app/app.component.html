@@ -1,7 +1,7 @@
-<table mat-table [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)"
-       class="mat-elevation-z8">
+ <!-- <table mat-table [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)"
+  class="mat-elevation-z8">
 
-  <!-- Position Column -->
+ 
   <ng-container matColumnDef="position">
     <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by number">
       No.
@@ -17,8 +17,6 @@
       <button mat-button [ngClass]="buttonClasses" (click)="realizarAccion(element)">Ejecutar {{element.name}}</button>
     </td>
   </ng-container>
-
-  <!-- Name Column -->
   <ng-container matColumnDef="name">
     <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by name">
       Name
@@ -26,7 +24,7 @@
     <td mat-cell *matCellDef="let element"> {{element.name}} </td>
   </ng-container>
 
-  <!-- Weight Column -->
+ 
   <ng-container matColumnDef="request">
     <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by weight">
       Request
@@ -34,7 +32,6 @@
     <td mat-cell *matCellDef="let element"> {{element.request}} </td>
   </ng-container>
 
-  <!-- Symbol Column -->
   <ng-container matColumnDef="response">
     <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by symbol">
       Response
@@ -52,41 +49,43 @@
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-</table>
+</table> -->
 
 
 
-  <div class="row">
-    <div class="col-lg-3 col-md-3 col-sm-6" *ngFor="let par of boxControl">
-      <div class="card h-100 shadow justify-content-center">
-        <div>
-          <div class="row card-body col-lg-12" >
-            <div class="d-flex align-items-center justify-content-between">
-              <div class="mr-3 row">
-                <h1 class="card-title tit-alt mt-0 mb-0">
-                  {{ par.name}}
-                </h1>
-              </div>
-              <div class="">
-                <i  style="color: #54b536"></i>
-              </div>
+<div class="row">
+  <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 pb-4" *ngFor="let par of data">
+    <div class="card h-100 shadow justify-content-center">
+      <div>
+        <div class="row card-body col-lg-12">
+          <div class="d-flex align-items-center justify-content-between">
+            <div class="mr-3 row">
+              <h6 class="card-title tit-alt mt-0 mb-0">
+                {{ par.nameService}}
+              </h6>
             </div>
             <div class="">
-              <p class="card-text D-label">Metodo: {{ par.request}}</p>
+              <i style="color: #54b536"></i>
             </div>
           </div>
-        </div>
-        <div class="">
-          <div class="pl-3 pb-3 pr-3">
-            <button type="button" (click)="realizarAccion(par)" class="m-0 btn btn-info pt-1 pb-1 w-100">
-              <strong>Probar</strong>
-            </button>
+          <div class="">
+            <p class="card-text D-label"><b>Metodo</b>: {{ par.metodo}}</p>
+          </div>
+          <div class="">
+            <p class="card-text D-label"><b>Ambiente</b>: {{ par.Ambiente}}</p>
           </div>
         </div>
       </div>
-    </div>
-    <!-- primera version -->
-  </div>
+      <div class="">
+        <div class="pl-3 pb-3 pr-3">
+          <button type="button" (click)="realizarAccion(par)" class="m-0 btn btn-info pt-1 pb-1 w-100">
+            <strong>Probar</strong>
+          </button>
+        </div>
+      </div>    
+    </div>    
+  </div>  
+</div>
 
 
 

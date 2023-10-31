@@ -1,0 +1,9 @@
+{
+    "*/api/*":{
+        "target": "http://msautentiltoken-nm-salesforce-sales-qa.apps.r05oof71.eastus2.aroapp.io",
+        "secure": false,
+        "changeOrigin": true,
+        "logLevel": "debug",
+        "pathRewrite": {"^/api" : ""}
+    }
+}
