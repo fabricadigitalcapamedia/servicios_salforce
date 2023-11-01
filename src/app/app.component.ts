@@ -127,8 +127,8 @@ export class AppComponent implements AfterViewInit {
   }
 
   realizarAccion(element: any) {
-    this.consulmicroService.getEjec(element.curl).subscribe((response) => {
-    console.log(element)      // Implementa la lógica de la acción que deseas realizar con el elemento seleccionado.
+    this.consulmicroService.createItem(element.curl).subscribe((response) => {
+    console.log(response)      // Implementa la lógica de la acción que deseas realizar con el elemento seleccionado.
       console.log('Haciendo algo con el elemento:', element);
     });
   }

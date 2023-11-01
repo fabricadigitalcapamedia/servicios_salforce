@@ -8,7 +8,7 @@ import axios from 'axios';
 })
 export class ConsulmicroService {
 
-  private apiUrl = 'https://tu-api.com';
+  private apiUrl = 'http://localhost:3000/MS/SVC/Service/ServiceTemplateNestJS/V1/NewContract';
 
   constructor(private http: HttpClient) { }
 
@@ -36,11 +36,10 @@ export class ConsulmicroService {
           curlData.url = urlMatch[1];
         }
         const methodMatch = line.match(/--data-raw/);
-        if (methodMatch) {
+        if (methodMatch != null) {
           curlData.method = "POST";
         }else {
           curlData.method = "GET";
-          
         }
       } 
       if (line.startsWith('--header')) {
@@ -61,12 +60,22 @@ export class ConsulmicroService {
 
     let res = this.sendHttpRequest(curlData);
     console.log(res);
-    return this.http.request(curlData.method, curlData.url, { body: curlData.body }).pipe(
-      catchError((error: any) => {
-        console.error('Error en la solicitud HTTP:', error);
-        return (error.status.toString());
-      })
-    );
+    if(curlData.method == "GET"){
+      return this.http.get(curlData.url).pipe(
+        catchError((error: any) => {
+          console.error('Error en la solicitud HTTP:', error);
+          return (error.status.toString());
+        })
+      );
+    }else {
+      return this.http.request(curlData.method, curlData.url, { body: curlData.body }).pipe(
+        catchError((error: any) => {
+          console.error('Error en la solicitud HTTP:', error);
+          return (error.status.toString());
+        })
+      );
+    }
+    
   }
 
   async sendHttpRequest(curlData: any) {
@@ -88,7 +97,7 @@ export class ConsulmicroService {
 
   
   createItem(item: any): Observable<any> {
-    return this.http.post(`${this.apiUrl}/items`, item);
+    return this.http.post(this.apiUrl, {curl: item});
   }
 
   // Operación de actualización (PUT)
