@@ -8,7 +8,7 @@ import axios from 'axios';
 })
 export class ConsulmicroService {
 
-  private apiUrl = 'http://localhost:3000/MS/SVC/Service/ServiceTemplateNestJS/V1/NewContract';
+  private apiUrl = 'http://puente-nm-salesforce-sales-qa.apps.r05oof71.eastus2.aroapp.io/MS/SVC/Service/ServiceTemplateNestJS/V1/NewContract';
 
   constructor(private http: HttpClient) { }
 
