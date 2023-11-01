@@ -30,7 +30,8 @@ export class AppComponent implements AfterViewInit {
   dataSource = new MatTableDataSource(ELEMENT_DATA);
   buttonClasses: string = '';
   boxControl: any;
-  data: any = {};
+  data: any;
+  response: any;
 
   constructor(private _liveAnnouncer: LiveAnnouncer, private consulmicroService: ConsulmicroService) { }
 
@@ -45,10 +46,12 @@ export class AppComponent implements AfterViewInit {
     this.data = [
       {
         nameService: "MSCustomeBridgeTabCloud",
-        curl: "curl --location 'http://mscustomebridgetabcloud-nm-salesforce-sales-dev.apps.r05oof71.eastus2.aroapp.io/MS/SVC/Service/MsCustomeBridGetabCloud/V1/Consult?tipoConsulta=1&datoBusqueda=0017800000GHJxcAAH' \
-    --header 'Cookie: f46e840f28d4786aa7d60cd1c464dffd=1ef1af7a350a2046ed8cdc6c926352c0'" ,
+        curl: "curl --location 'http://mscustomebridgetabcloud-nm-salesforce-sales-dev.apps.r05oof71.eastus2.aroapp.io/MS/SVC/Service/MsCustomeBridGetabCloud/V1/Consult?tipoConsulta=1&datoBusqueda=0017800000GHJxcAAH' \ --header 'Cookie: f46e840f28d4786aa7d60cd1c464dffd=1ef1af7a350a2046ed8cdc6c926352c0'",
         metodo: "Consult",
-        Ambiente: "DEV"
+        Ambiente: "DEV",
+        totaltime: "",
+        respuesta: "",
+        responseCode: ""
       },
       {
         nameService: "MSCustomeBridgeTabCloud",
@@ -218,11 +221,30 @@ export class AppComponent implements AfterViewInit {
   }
 
   realizarAccion(element: any) {
-     element.respuesta='verde'
-    /*  this.consulmicroService.createItem(element.curl).subscribe((response) => {
-      console.log(response)      // Implementa la lógica de la acción que deseas realizar con el elemento seleccionado.
-        console.log('Haciendo algo con el elemento:', element);
-      });*/
+    let hora: Date = new Date();
+    element.disabled = true;
+    let totaltime = 0;
+    this.consulmicroService.createItem(element.curl).subscribe(
+      (response) => {
+        totaltime = new Date().getTime() - hora.getTime();
+        element.totaltime = totaltime.toString() + ' ms.'
+        this.response = response; 
+        element.responseCode = this.response.responseCode;
+        element.disabled = false;
+        element.respuesta = 'verde'            
+      },
+      (error) => {
+        totaltime = new Date().getTime() - hora.getTime();
+        element.totaltime = totaltime.toString() + ' ms.'; 
+        element.disabled = false;
+        element.respuesta = 'rojo';
+        if (error.error.responseCode) {       
+          element.responseCode = error.error.responseCode;         
+        }else{
+          element.responseCode = 'REVISA VPN';
+        }
+      }
+    );
   }
 }
 

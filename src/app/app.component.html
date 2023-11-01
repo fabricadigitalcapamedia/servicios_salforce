@@ -54,7 +54,7 @@
 
 
 <div class="row">
-  <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 col-12 pb-4" *ngFor="let par of data">
+  <ng-container class="col-lg-3 col-md-4 col-sm-6 col-xs-12 col-12 pb-4" *ngFor="let par of data">
     <div class="card h-100 shadow justify-content-center">
       <div>
         <div class="row card-body col-lg-12 col-12" >
@@ -74,17 +74,23 @@
           <div class="">
             <p class="card-text D-label"><b>Ambiente</b>: {{ par.Ambiente}}</p>
           </div>
+          <div class="">
+            <p class="card-text D-label"><b>Total Time</b>: {{ par.totaltime}}</p>
+          </div>
+          <div class="">
+            <p class="card-text D-label"><b>Status Code</b>: {{ par.responseCode}}</p>
+          </div>
         </div>
       </div>
       <div class="">
-        <div class="pl-3 pb-3 pr-3">
-          <button type="button" (click)="realizarAccion(par)" class="m-0 btn btn-info pt-1 pb-1 w-100">
+        <div class="pl-3 pb-3 pr-3" >
+          <button type="button" [disabled]="par.disabled" (click)="realizarAccion(par)" class="m-0 btn btn-info pt-1 pb-1 w-100">
             <strong>Probar</strong>
           </button>
         </div>
       </div>    
     </div>    
-  </div>  
+  </ng-container>  
 </div>
 
 
