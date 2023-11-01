@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, catchError } from 'rxjs';
-import axios from 'axios';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +16,7 @@ export class ConsulmicroService {
    getItems(): Observable<any> {
     return this.http.get(`${this.apiUrl}/items`);
   }
-  getEjec(curlText: string): Observable<any> {
+  /*getEjec(curlText: string): Observable<any> {
     const lines = curlText.split('\n');
 
     const curlData = {
@@ -59,7 +58,7 @@ export class ConsulmicroService {
       }
     });
 
-    let res = this.sendHttpRequest(curlData);
+   /* let res = this.sendHttpRequest(curlData);
     console.log(res);
     return this.http.request(curlData.method, curlData.url, { body: curlData.body }).pipe(
       catchError((error: any) => {
@@ -67,9 +66,9 @@ export class ConsulmicroService {
         return (error.status.toString());
       })
     );
-  }
+  }*/
 
-  async sendHttpRequest(curlData: any) {
+  /*async sendHttpRequest(curlData: any) {
     //const headers = new HttpHeaders(curlData.headers);
     let responseOp;
     responseOp = axios.post(curlData.url, curlData.data, {responseType: 'json',}).then((response) => {
@@ -83,8 +82,8 @@ export class ConsulmicroService {
     /*this.http.request(curlData.method, curlData.url, { body: curlData.body })
       .subscribe((response: any) => {
         console.log(response);
-      });*/
-  }
+      });
+  }*/
 
   
   createItem(item: any): Observable<any> {

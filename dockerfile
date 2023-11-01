@@ -1,5 +1,5 @@
 # Use an official Node.js 14 runtime as the base image
-FROM node:14
+FROM node:16.15.0-alpine
  
 # Set the working directory in the container
 WORKDIR /app
@@ -15,6 +15,8 @@ COPY . .
  
 # Build the Angular application
 RUN npm run build
+ 
+RUN chown -R  1002080000:1002080000 /app  
  
 # Expose the port the Angular app runs on
 EXPOSE 4200

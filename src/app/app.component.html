@@ -54,11 +54,11 @@
 
 
 <div class="row">
-  <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 pb-4" *ngFor="let par of data">
+  <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 col-12 pb-4" *ngFor="let par of data">
     <div class="card h-100 shadow justify-content-center">
       <div>
-        <div class="row card-body col-lg-12">
-          <div class="d-flex align-items-center justify-content-between">
+        <div class="row card-body col-lg-12 col-12" >
+          <div class="d-flex align-items-center justify-content-between"  [ngClass]="{'verde': par.respuesta=='verde', 'rojo': par.respuesta=='rojo'}">
             <div class="mr-3 row">
               <h6 class="card-title tit-alt mt-0 mb-0">
                 {{ par.nameService}}

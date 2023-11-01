@@ -35,3 +35,15 @@ th.mat-sort-header-sorted {
 .card-body {
     padding: 10px;
 }
+
+.verde {
+    background-color: #54b536;
+    /* Cambia el color de fondo a verde */
+}
+
+.rojo {
+    background-color: #FF0000;
+    /* Cambia el color de fondo a rojo */
+    color: #FFF;
+    /* Cambia el color del texto a blanco, por ejemplo */
+}
