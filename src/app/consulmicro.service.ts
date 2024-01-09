@@ -8,7 +8,7 @@ import axios from 'axios';
 })
 export class ConsulmicroService {
 
-  private apiUrl = 'http://puente-nm-salesforce-sales-qa.apps.r05oof71.eastus2.aroapp.io/MS/SVC/Service/ServiceTemplateNestJS/V1/NewContract';
+  private apiUrl = 'http://msservicestateprovicional-nm-salesforce-sales-qa.apps.r05oof71.eastus2.aroapp.io/MS/SVC/Service';
 
   constructor(private http: HttpClient) { }
 
@@ -97,7 +97,9 @@ export class ConsulmicroService {
 
 
   public createItem(item: any) {
-    return this.http.post(this.apiUrl, { curl: item })
+    item.ambiente=item.ambiente?null:item.ambiente;
+    const url = `${this.apiUrl}/metodoConsulta/metodoConsulta?microservicio=${item.microservicio}&metodo=${item.metodo}&ambiente=${item.Ambiente}`;
+    return this.http.get(url)
       .pipe(
         catchError(this.handleError)
       );

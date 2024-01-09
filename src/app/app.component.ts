@@ -46,167 +46,241 @@ export class AppComponent implements AfterViewInit {
     this.data = [
       {
         nameService: "MSCustomeBridgeTabCloud",
-        curl: "curl --location 'http://mscustomebridgetabcloud-nm-salesforce-sales-dev.apps.r05oof71.eastus2.aroapp.io/MS/SVC/Service/MsCustomeBridGetabCloud/V1/Consult?tipoConsulta=1&datoBusqueda=0017800000GHJxcAAH' \ --header 'Cookie: f46e840f28d4786aa7d60cd1c464dffd=1ef1af7a350a2046ed8cdc6c926352c0'",
         metodo: "Consult",
-        Ambiente: "DEV",
-        totaltime: "",
-        respuesta: "",
-        responseCode: ""
+        Ambiente: "dev"
       },
       {
         nameService: "MSCustomeBridgeTabCloud",
-        curl: "curl --location 'http://mscustomebridgetabcloud-nm-salesforce-sales-qa.apps.r05oof71.eastus2.aroapp.io/MS/SVC/Service/MsCustomeBridGetabCloud/V1/Consult?tipoConsulta=1&datoBusqueda=0017800000GHJxcAAH' \
-    --header 'Cookie: f46e840f28d4786aa7d60cd1c464dffd=1ef1af7a350a2046ed8cdc6c926352c0'" ,
         metodo: "Consult",
-        Ambiente: "QA"
+        Ambiente: "qa"
+      },
+      {
+        nameService: "MSCustomeBridgeTabCloud",
+        metodo: "Consult",
+        Ambiente: "prod"
       },
       {
         nameService: "MSCustomeBridgeTableOp",
-        curl: " curl --location 'http://mscustomebridgetableop-nm-salesforce-sales-dev.apps.claro.co/MS/CUS/CustomerAccount/RSCustomeBridgeTableOP/V1/Consult?tipoConsulta=13&datoBusqueda=12' \
-    --header 'accept: application/json' \
-    --header 'Content-Type: application/json' \
-    --header 'Cookie: 8462980503615aa6d3733c266e4ab513=3b07e30c13a26b68abeef69eb92a5b23'",
         metodo: "Consult",
-        Ambiente: "DEV"
+        Ambiente: "dev"
       },
       {
         nameService: "MSCustomeBridgeTableOp",
-        curl: " curl --location 'http://mscustomebridgetableop-nm-salesforce-sales-qa.apps.claro.co/MS/CUS/CustomerAccount/RSCustomeBridgeTableOP/V1/Consult?tipoConsulta=13&datoBusqueda=12' \
-    --header 'accept: application/json' \
-    --header 'Content-Type: application/json' \
-    --header 'Cookie: 8462980503615aa6d3733c266e4ab513=3b07e30c13a26b68abeef69eb92a5b23'"  ,
         metodo: "Consult",
-        Ambiente: "QA"
+        Ambiente: "qa"
       },
       {
-        nameService: "MSAutentiltoken",
-        curl: "curl --location 'http://msautentiltoken-nm-salesforce-sales-dev.apps.r05oof71.eastus2.aroapp.io/MS/MsAuthentication/Authentication' \ --header 'accept: application/json' \ --header 'Content-Type: application/json' \ --header 'Cookie: 170751ca5dbdd2fc7b788ea00752648c=9cd1c813b3531903fbcf1203e950ec9c;9852ea517a763ff80f67b409a3a05176=8d78291174b3aac66d11a05f44139853' \ --data-raw '{ \"iss\": \"3MVG9qEXqmIutu_TwT3C7e5DLglHfznLNbZQYcQw2mFNAN8PtHZsu1vwcUF.3W_cdUXPULPXAckbagusIKdbw\", \"sub\": \"devops@clarosfi.com.co.ci03\", \"aud\": \"https://test.salesforce.com\", \"exp\": \"1696455546\" }' ",
+        nameService: "MSCustomeBridgeTableOp",
+        metodo: "Consult",
+        Ambiente: "prod"
+      },
+      {
+        nameService: "msautentiltoken",
         metodo: "Authentication",
-        Ambiente: "DEV"
+        Ambiente: "dev"
       },
       {
-        nameService: "MSAutentiltoken",
-        curl: "curl --location 'http://msautentiltoken-nm-salesforce-sales-qa.apps.r05oof71.eastus2.aroapp.io/MS/MsAuthentication/Authentication' \ --header 'accept: application/json' \ --header 'Content-Type: application/json' \ --header 'Cookie: 170751ca5dbdd2fc7b788ea00752648c=9cd1c813b3531903fbcf1203e950ec9c;9852ea517a763ff80f67b409a3a05176=8d78291174b3aac66d11a05f44139853' \ --data-raw '{ \"iss\": \"3MVG9qEXqmIutu_TwT3C7e5DLglHfznLNbZQYcQw2mFNAN8PtHZsu1vwcUF.3W_cdUXPULPXAckbagusIKdbw\", \"sub\": \"devops@clarosfi.com.co.ci03\", \"aud\": \"https://test.salesforce.com\", \"exp\": \"1696455546\" }' ",
+        nameService: "msautentiltoken",
         metodo: "Authentication",
-        Ambiente: "QA"
+        Ambiente: "qa"
       },
       {
-        nameService: "MSComunicationSaleForce",
-        curl: " curl --location 'http://mscomunicationsaleforce-nm-salesforce-sales-dev.apps.r05oof71.eastus2.aroapp.io/MS/SVC/Service/MSComunicationSaleforce/PaymentService/V1.0/getOrderPayment?identificationType=CC&identificationNumber=12345678' \
-    --header 'Authorization: Bearer 00D780000008hLE!AREAQFAChMGl9_FKXmMQQi7RYmDcdBCGhWa3Nd26mTWytXFJeGX1i_oxD7KfdT6kHf2DDGqk.Ztn3Ru.sDDVQSllkvvAK3D_' \
-    --header 'Cookie: 170751ca5dbdd2fc7b788ea00752648c=cf5bad62ce007ecf6d953fffef89fc4d'"  ,
+        nameService: "mscomunicationsaleforce",
         metodo: "GetOrderPayment",
-        Ambiente: "DEV"
+        Ambiente: "dev"
       },
       {
-        nameService: "MSComunicationSaleForce",
-        curl: " curl --location 'http://mscomunicationsaleforce-nm-salesforce-sales-qa.apps.r05oof71.eastus2.aroapp.io/MS/SVC/Service/MSComunicationSaleforce/PaymentService/V1.0/getOrderPayment?identificationType=CC&identificationNumber=12345678' \
-    --header 'Authorization: Bearer 00D780000008hLE!AREAQFAChMGl9_FKXmMQQi7RYmDcdBCGhWa3Nd26mTWytXFJeGX1i_oxD7KfdT6kHf2DDGqk.Ztn3Ru.sDDVQSllkvvAK3D_' \
-    --header 'Cookie: 170751ca5dbdd2fc7b788ea00752648c=cf5bad62ce007ecf6d953fffef89fc4d'",
+        nameService: "mscomunicationsaleforce",
         metodo: "GetOrderPayment",
-        Ambiente: "QA"
+        Ambiente: "qa"
       },
       {
-        nameService: "MSComunicationSaleForce",
-        curl: " curl --location 'http://mscomunicationsaleforce-nm-salesforce-sales-dev.apps.r05oof71.eastus2.aroapp.io/MS/SVC/Service/MSComunicationSaleforce/PaymentService/V1.0/VerifyOrderPayment?identificationType=CC&identificationNumber=1030588316' \
-    --header 'accept: application/json' \
-    --header 'Content-Type: application/json' \
-    --header 'Cookie: 170751ca5dbdd2fc7b788ea00752648c=9cd1c813b3531903fbcf1203e950ec9c; 4478bc089c9d48de53802e305b954148=f974750df5a07f3d74c5b4bdab5c4f55'"  ,
+        nameService: "mscomunicationsaleforce",
+        metodo: "GetOrderPayment",
+        Ambiente: "prod"
+      },
+      {
+        nameService: "mscomunicationsaleforce",
         metodo: "VerifyOrderPayment",
-        Ambiente: "DEV"
+        Ambiente: "dev"
       },
       {
-        nameService: "MSComunicationSaleForce",
-        curl: " curl --location 'http://mscomunicationsaleforce-nm-salesforce-sales-qa.apps.r05oof71.eastus2.aroapp.io/MS/SVC/Service/MSComunicationSaleforce/PaymentService/V1.0/VerifyOrderPayment?identificationType=CC&identificationNumber=1030588316' \
-    --header 'accept: application/json' \
-    --header 'Content-Type: application/json' \
-    --header 'Cookie: 170751ca5dbdd2fc7b788ea00752648c=9cd1c813b3531903fbcf1203e950ec9c; 4478bc089c9d48de53802e305b954148=f974750df5a07f3d74c5b4bdab5c4f55'" ,
+        nameService: "mscomunicationsaleforce",
         metodo: "VerifyOrderPayment",
-        Ambiente: "QA"
+        Ambiente: "qa"
       },
       {
-        nameService: "MSComunicationsaleforce",
-        curl: "curl --location ' http://mscomunicationsaleforce-nm-salesforce-sales-dev.apps.r05oof71.eastus2.aroapp.io/MS/SVC/Service/MSComunicationSaleforce/PaymentService/V1.0/IpmonSmilestone' \ --header 'accept: application/json' \ --header 'Content-Type: application/json' \ --header 'Cookie: 170751ca5dbdd2fc7b788ea00752648c=6e130ba0d9658c2589ef247ec1ec03ae' \ --data '{     \"orderOmsId\": \"64c2c41a2c132396cae64d09\",     \"orderSapId\": \"64b6a3c12c132396ca91b33e\",     \"orderProductItem\": {         \"status\": \"READY_FOR_PICKUP\",         \"deliveryOrderId\": \"F23071861004\",         \"serials\": \"571234567890\",         \"productType\": \"TV0003\"     } }'",
+        nameService: "mscomunicationsaleforce",
+        metodo: "VerifyOrderPayment",
+        Ambiente: "prod"
+      },
+      {
+        nameService: "mscomunicationsaleforce",
         metodo: "IpmonSmilestone",
-        Ambiente: "DEV"
+        Ambiente: "dev"
       },
       {
-        nameService: "MSComunicationsaleforce",
-        curl: "curl --location 'http://mscomunicationsaleforce-nm-salesforce-sales-qa.apps.r05oof71.eastus2.aroapp.io/MS/SVC/Service/MSComunicationSaleforce/PaymentService/V1.0/IpmonSmilestone' \ --header 'accept: application/json' \ --header 'Content-Type: application/json' \ --header 'Cookie: 170751ca5dbdd2fc7b788ea00752648c=6e130ba0d9658c2589ef247ec1ec03ae' \ --data '{     \"orderOmsId\": \"64c2c41a2c132396cae64d09\",     \"orderSapId\": \"64b6a3c12c132396ca91b33e\",     \"orderProductItem\": {         \"status\": \"READY_FOR_PICKUP\",         \"deliveryOrderId\": \"F23071861004\",         \"serials\": \"571234567890\",         \"productType\": \"TV0003\"     } }'",
+        nameService: "mscomunicationsaleforce",
         metodo: "IpmonSmilestone",
-        Ambiente: "QA"
-      },/*
+        Ambiente: "qa"
+      },
+      
       {
-        nameService: "MSComunicationsaleforce",
-        curl: "",
-        metodo: "GetCaseInformation",
-        Ambiente: "DEV"
+        nameService: "mscomunicationsaleforce",        
+        metodo: "Reversepaymentsvtas",
+        Ambiente: "dev"
       },
       {
-        nameService: "MSComunicationsaleforce",
-        curl: "",
-        metodo: "GetCaseInformation",
-        Ambiente: "QA"
+        nameService: "mscomunicationsaleforce",
+        metodo: "Reversepaymentsvtas",
+        Ambiente: "qa"
+      },
+
+      {
+        nameService: "ImeiV2.0",
+        metodo: "bdoNegativo",
+        Ambiente: "dev"
       },
       {
-        nameService: "MSComunicationsaleforce",
-        curl: "",
-        metodo: "ProductOrderPaymentConfirmation",
-        Ambiente: "QA"
+        nameService: "ImeiV2.0",
+        metodo: "cambioTitularidad",
+        Ambiente: "dev"
       },
       {
-        nameService: "MSComunicationsaleforce",
-        curl: "",
-        metodo: "ProductOrderPaymentConfirmation",
-        Ambiente: "DEV"
+        nameService: "ImeiV2.0",
+        metodo: "bdoPositivo",
+        Ambiente: "dev"
       },
       {
-        nameService: "MSComunicationsaleforce",
-        curl: "",
-        metodo: "GetProductOrder",
-        Ambiente: "DEV"
+        nameService: "ImeiV2.0",
+        metodo: "bdaPositivo",
+        Ambiente: "dev"
       },
       {
-        nameService: "MSComunicationsaleforce",
-        curl: "",
-        metodo: "GetProductOrder",
-        Ambiente: "QA"
-      },*/
-      {
-        nameService: "MSComunicationsaleforce",
-        curl: "curl --location 'http://mscomunicationsaleforce-nm-salesforce-sales-dev.apps.r05oof71.eastus2.aroapp.io/MS/SVC/Service/MSComunicationSaleforce/PaymentService/V1.0/ReversePaymentSvtas' \ --header 'accept: application/json' \ --header 'Content-Type: application/json' \ --header 'Cookie: 170751ca5dbdd2fc7b788ea00752648c=9cd1c813b3531903fbcf1203e950ec9c; 170751ca5dbdd2fc7b788ea00752648c=deb5a270f24adacf7f3f54597b28addd' \ --data '{     \"PaymentConfirmation\": [         {             \"CaseNumber\": \"00001015\",             \"paymentId\": \"123456788\",             \"companyId\": \"SICACOM\",             \"status\": \"Cerrado\",             \"SubState\": \"Dinero entregado\",             \"OrderPaymentInformation\": [                 {                     \"paymentMethod\": \"1\",                     \"amount\": 10.0,                     \"dateTime\": \"2021-04-16T00:00:00.000Z\"                 }             ]         }     ] }' ",
-        metodo: "ReversePaymentSvtas",
-        Ambiente: "DEV"
+        nameService: "AddressV2.1",
+        metodo: "consultaDireccionGeneral",
+        Ambiente: "dev"
       },
       {
-        nameService: "MSComunicationsaleforce",
-        curl: "curl --location 'http://mscomunicationsaleforce-nm-salesforce-sales-qa.apps.r05oof71.eastus2.aroapp.io/MS/SVC/Service/MSComunicationSaleforce/PaymentService/V1.0/ReversePaymentSvtas' \ --header 'accept: application/json' \ --header 'Content-Type: application/json' \ --header 'Cookie: 170751ca5dbdd2fc7b788ea00752648c=9cd1c813b3531903fbcf1203e950ec9c; 170751ca5dbdd2fc7b788ea00752648c=deb5a270f24adacf7f3f54597b28addd' \ --data '{     \"PaymentConfirmation\": [         {             \"CaseNumber\": \"00001015\",             \"paymentId\": \"123456788\",             \"companyId\": \"SICACOM\",             \"status\": \"Cerrado\",             \"SubState\": \"Dinero entregado\",             \"OrderPaymentInformation\": [                 {                     \"paymentMethod\": \"1\",                     \"amount\": 10.0,                     \"dateTime\": \"2021-04-16T00:00:00.000Z\"                 }             ]         }     ] }' ",
-        metodo: "ReversePaymentSvtas",
-        Ambiente: "QA"
+        nameService: "AddressV2.1",
+        metodo: "consultaDireccion",
+        Ambiente: "dev"
       },
       {
-        nameService: "MSCusorderpubpaymentconfi",
-        curl: "curl -X 'POST' \ 'http://mscusorderpubpaymentconfi-nm-salesforce-sales-dev.apps.r05oof71.eastus2.aroapp.io/MS/ENP/CustomerOrder/RSCusOrdePubPaymentConfig/V1/UPDATE/Payment' \ -H 'accept: application/json' \ -H 'Content-Type: application/json' \ -d '{          \"orderId\": \"12345\",  \"num_orden\": \"8888\",  \"id_process\": \"999\",  \"canal\": \"test_salesforce\",  \"tip_venta\": \"LIBRE\",  \"proceso_venta\": \"NAP\",  \"tip_entrega\": \"test\",  \"pago\": {  \"estado\": \"APROBADO\",  \"plataforma\": \"DEBITO\",  \"pasarela\": \"VISA\",  \"cus\": \"2980074\",  \"referencia\": \"1014022\",  \"valor_recaudo\": 797900,  \"fecha_recaudo\": \"2023-07-18\",  \"fecha_contable\": \"2023-07-18\"  }  }' ",
+        nameService: "AddressV2.1",
+        metodo: "construirDireccionHhpp",
+        Ambiente: "dev"
+      },
+      {
+        nameService: "AddressV2.1",
+        metodo: "obtenerConfiguracionComponenteDireccion",
+        Ambiente: "dev"
+      },
+      {
+        nameService: "AddressV2.1",
+        metodo: "obtenerBarrioListHhpp",
+        Ambiente: "dev"
+      },
+      {
+        nameService: "WSIMEIDualSIM",
+        metodo: "ConsultaIMEIDualSIM",
+        Ambiente: "dev"
+      },
+      {
+        nameService: "UnifiedListsV1.0",
+        metodo: "UnifiedLists",
+        Ambiente: "dev"
+      },
+      {
+        nameService: "ReconocerV1.0",
+        metodo: "getInformacion",
+        Ambiente: "dev"
+      },
+      {
+        nameService: "msnotificationcuschannel",
+        metodo: "V1",
+        Ambiente: "dev"
+      },
+      {
+        nameService: "msdcpoffeschedul",
+        metodo: "queryOrderSchedule",
+        Ambiente: "dev"
+      },
+      {
+        nameService: "msdcpoffeschedul",
+        metodo: "ProductListPromise",
+        Ambiente: "dev"
+      },
+      {
+        nameService: "mscustomerorderdelivery",
+        metodo: "order",
+        Ambiente: "dev"
+      },
+      {
+        nameService: "mscustomerordershipmentoms",
+        metodo: "reject",
+        Ambiente: "dev"
+      },
+      {
+        nameService: "mscustomerordershipmentoms",
+        metodo: "confirm",
+        Ambiente: "dev"
+      },
+      {
+        nameService: "mscusorderpubpaymentconfig",
         metodo: "Payment",
-        Ambiente: "DEV"
+        Ambiente: "dev"
       },
       {
-        nameService: "MSCusorderpubpaymentconfi",
-        curl: "curl -X 'POST' \ 'http://mscusorderpubpaymentconfi-nm-salesforce-sales-qa.apps.r05oof71.eastus2.aroapp.io/MS/ENP/CustomerOrder/RSCusOrdePubPaymentConfig/V1/UPDATE/Payment' \ -H 'accept: application/json' \ -H 'Content-Type: application/json' \ -d '{          \"orderId\": \"12345\",  \"num_orden\": \"8888\",  \"id_process\": \"999\",  \"canal\": \"test_salesforce\",  \"tip_venta\": \"LIBRE\",  \"proceso_venta\": \"NAP\",  \"tip_entrega\": \"test\",  \"pago\": {  \"estado\": \"APROBADO\",  \"plataforma\": \"DEBITO\",  \"pasarela\": \"VISA\",  \"cus\": \"2980074\",  \"referencia\": \"1014022\",  \"valor_recaudo\": 797900,  \"fecha_recaudo\": \"2023-07-18\",  \"fecha_contable\": \"2023-07-18\"  }  }' ",
+        nameService: "mscusorderpubpaymentconfig",
         metodo: "Payment",
-        Ambiente: "QA"
+        Ambiente: "qa"
+      },
+      {
+        nameService: "SAPInventoryV1.0",
+        metodo: "queryByImei",
+        Ambiente: "dev"
+      },
+      {
+        nameService: "PostSaleInspODSV1.0",
+        metodo: "GetODS",
+        Ambiente: "dev"
+      },
+      {
+        nameService: "PostSaleInspODSV1.0",
+        metodo: "UpdateODS",
+        Ambiente: "dev"
+      },
+      {
+        nameService: "PostSaleInspODSV1.0",
+        metodo: "CreateODS",
+        Ambiente: "dev"
+      },
+      {
+        nameService: "PaymentServiceV1.0",
+        metodo: "ConfirmOrderPayment",
+        Ambiente: "dev"
+      },
+      {
+        nameService: "PaymentServiceV1.0",
+        metodo: "ReversePaymentsvtas",
+        Ambiente: "dev"
+      },
+      {
+        nameService: "PaymentServiceV1.0",
+        metodo: "ReversePaymentsvtas",
+        Ambiente: "dev"
+      },  
+      
+      {
+        nameService: "MSCustomeBridgeTeqTec",
+        metodo: "Insert",
+        Ambiente: "dev"
       },
       {
         nameService: "MSCustomeBridgeTeqTec",
-        curl: "Curl: curl --location 'http://mscustomebridgeteqtec-nm-salesforce-sales-dev.apps.r05oof71.eastus2.aroapp.io/MS/SVC/Service/MSCustomeBridgeTeqTec/V1/update' \ --header 'accept: application/json' \ --header 'Content-Type: application/json' \ --header 'Cookie: 170751ca5dbdd2fc7b788ea00752648c=9cd1c813b3531903fbcf1203e950ec9c; 94d0c25fe1a28fcf2dad56359cdd8d63=d9422f038f65f5e7121e9ad1921aaa88' \ --data '{     \"motivo\" : 1,     \"id_Cliente\" : \"417\",     \"datoBusqueda\" : \"1;123456789\",     \"datoActualizar\" : \"D\" }'",
-        metodo: "update",
-        Ambiente: "DEV"
-      },
-      {
-        nameService: "MSCustomeBridgeTeqTec",
-        curl: "Curl: curl --location 'http://mscustomebridgeteqtec-nm-salesforce-sales-qa.apps.r05oof71.eastus2.aroapp.io/MS/SVC/Service/MSCustomeBridgeTeqTec/V1/update' \ --header 'accept: application/json' \ --header 'Content-Type: application/json' \ --header 'Cookie: 170751ca5dbdd2fc7b788ea00752648c=9cd1c813b3531903fbcf1203e950ec9c; 94d0c25fe1a28fcf2dad56359cdd8d63=d9422f038f65f5e7121e9ad1921aaa88' \ --data '{     \"motivo\" : 1,     \"id_Cliente\" : \"417\",     \"datoBusqueda\" : \"1;123456789\",     \"datoActualizar\" : \"D\" }'",
-        metodo: "update",
-        Ambiente: "QA"
+        metodo: "Insert",
+        Ambiente: "qa"
       }
     ]
   }
@@ -224,23 +298,23 @@ export class AppComponent implements AfterViewInit {
     let hora: Date = new Date();
     element.disabled = true;
     let totaltime = 0;
-    this.consulmicroService.createItem(element.curl).subscribe(
+    this.consulmicroService.createItem(element).subscribe(
       (response) => {
         totaltime = new Date().getTime() - hora.getTime();
         element.totaltime = totaltime.toString() + ' ms.'
-        this.response = response; 
+        this.response = response;
         element.responseCode = this.response.responseCode;
         element.disabled = false;
-        element.respuesta = 'verde'            
+        element.respuesta = 'verde'
       },
       (error) => {
         totaltime = new Date().getTime() - hora.getTime();
-        element.totaltime = totaltime.toString() + ' ms.'; 
+        element.totaltime = totaltime.toString() + ' ms.';
         element.disabled = false;
         element.respuesta = 'rojo';
-        if (error.error.responseCode) {       
-          element.responseCode = error.error.responseCode;         
-        }else{
+        if (error.error.responseCode) {
+          element.responseCode = error.error.responseCode;
+        } else {
           element.responseCode = 'REVISA VPN';
         }
       }
